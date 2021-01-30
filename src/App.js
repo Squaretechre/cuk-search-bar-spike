@@ -3,8 +3,8 @@ import queryString from "query-string";
 import SearchBar from "./SearchBar";
 
 /*
-  Replace browser url with:
-  https://0ux25.csb.app/?location=Manchester&venueType=Conference Centre&budget=1000&attendees=20&layout=Cabaret&bedrooms=10
+  Replace query string in browser tab to the right with:
+  ?location=Manchester&venueType=Conference Centre&budget=1000&attendees=20&layout=Cabaret&bedrooms=10
 */
 
 const searchParameters = queryString.parse(window.location.search);
