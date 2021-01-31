@@ -40,41 +40,29 @@ const SearchBar = ({
     handleSearch(parameters());
   };
 
+  const props = {
+    location: _location,
+    venueType: _venueType,
+    budget: _budget,
+    attendees: _attendees,
+    layout: _layout,
+    bedrooms: _bedrooms,
+    setLocation: setLocation,
+    setVenueType: setVenueType,
+    setBudget: setBudget,
+    setAttendees: setAttendees,
+    setLayout: setLayout,
+    setBedrooms: setBedrooms,
+    handleSearch: _handleSearch
+  };
+
   return (
     <>
       <div>
         {isWide ? (
-          <SearchBarDesktop
-            location={_location}
-            venueType={_venueType}
-            budget={_budget}
-            attendees={_attendees}
-            layout={_layout}
-            bedrooms={_bedrooms}
-            setLocation={setLocation}
-            setVenueType={setVenueType}
-            setBudget={setBudget}
-            setAttendees={setAttendees}
-            setLayout={setLayout}
-            setBedrooms={setBedrooms}
-            handleSearch={_handleSearch}
-          />
+          <SearchBarDesktop {...props} />
         ) : (
-          <SearchBarMobile
-            location={_location}
-            venueType={_venueType}
-            budget={_budget}
-            attendees={_attendees}
-            layout={_layout}
-            bedrooms={_bedrooms}
-            setLocation={setLocation}
-            setVenueType={setVenueType}
-            setBudget={setBudget}
-            setAttendees={setAttendees}
-            setLayout={setLayout}
-            setBedrooms={setBedrooms}
-            handleSearch={_handleSearch}
-          />
+          <SearchBarMobile {...props} />
         )}
       </div>
     </>
