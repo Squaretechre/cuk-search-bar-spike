@@ -23,22 +23,18 @@ const SearchBar = ({
   const [_layout, setLayout] = useState(layout);
   const [_bedrooms, setBedrooms] = useState(bedrooms);
 
-  const parameters = () => {
-    return {
-      location: _location,
-      venueType: _venueType,
-      budget: _budget,
-      attendees: _attendees,
-      layout: _layout,
-      bedrooms: _bedrooms
-    };
-  };
+  const parameters = () => ({
+    location: _location,
+    venueType: _venueType,
+    budget: _budget,
+    attendees: _attendees,
+    layout: _layout,
+    bedrooms: _bedrooms
+  });
 
   useSyncQueryString(parameters());
 
-  const _handleSearch = () => {
-    handleSearch(parameters());
-  };
+  const _handleSearch = () => handleSearch(parameters());
 
   const props = {
     location: _location,

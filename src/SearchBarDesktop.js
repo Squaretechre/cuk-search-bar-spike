@@ -1,4 +1,5 @@
 import React from "react";
+import { withValueFrom } from "./dom";
 
 const SearchBarDesktop = ({
   location,
@@ -24,7 +25,7 @@ const SearchBarDesktop = ({
           <input
             type="text"
             value={location}
-            onChange={({ target: { value } }) => setLocation(value)}
+            onChange={(event) => setLocation(withValueFrom(event))}
           />
         </div>
         <div>
@@ -32,7 +33,7 @@ const SearchBarDesktop = ({
           <input
             type="text"
             value={venueType}
-            onChange={({ target: { value } }) => setVenueType(value)}
+            onChange={(event) => setVenueType(withValueFrom(event))}
           />
         </div>
         <div>
@@ -40,7 +41,7 @@ const SearchBarDesktop = ({
           <input
             type="text"
             value={budget}
-            onChange={({ target: { value } }) => setBudget(value)}
+            onChange={(event) => setBudget(withValueFrom(event))}
           />
         </div>
         <div>
@@ -48,7 +49,7 @@ const SearchBarDesktop = ({
           <input
             type="text"
             value={attendees}
-            onChange={({ target: { value } }) => setAttendees(value)}
+            onChange={(event) => setAttendees(withValueFrom(event))}
           />
         </div>
         <div>
@@ -56,7 +57,7 @@ const SearchBarDesktop = ({
           <input
             type="text"
             value={layout}
-            onChange={({ target: { value } }) => setLayout(value)}
+            onChange={(event) => setLayout(withValueFrom(event))}
           />
         </div>
         <div>
@@ -64,7 +65,7 @@ const SearchBarDesktop = ({
           <input
             type="text"
             value={bedrooms}
-            onChange={({ target: { value } }) => setBedrooms(value)}
+            onChange={(event) => setBedrooms(withValueFrom(event))}
           />
         </div>
         <button onClick={handleSearch}>search</button>

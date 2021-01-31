@@ -1,4 +1,5 @@
 import React from "react";
+import { withValueFrom } from "./dom";
 
 const SearchBarMobile = ({
   location,
@@ -23,7 +24,7 @@ const SearchBarMobile = ({
         <input
           type="text"
           value={location}
-          onChange={({ target: { value } }) => setLocation(value)}
+          onChange={(event) => setLocation(withValueFrom(event))}
         />
       </div>
       <div>
@@ -31,7 +32,7 @@ const SearchBarMobile = ({
         <input
           type="text"
           value={attendees}
-          onChange={({ target: { value } }) => setAttendees(value)}
+          onChange={(event) => setAttendees(withValueFrom(event))}
         />
       </div>
       <div>
@@ -39,7 +40,7 @@ const SearchBarMobile = ({
         <input
           type="text"
           value={budget}
-          onChange={({ target: { value } }) => setBudget(value)}
+          onChange={(event) => setBudget(withValueFrom(event))}
         />
       </div>
       <button onClick={handleSearch}>search</button>
